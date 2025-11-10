@@ -413,6 +413,7 @@ export interface TitleLayer extends TextLayer, KenBurns {
    * Layer type.
    */
   type: "title";
+  fontSize: number;
 
   /**
    * Position.

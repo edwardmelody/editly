@@ -11,18 +11,19 @@ import {
 export default defineFrameSource<TitleLayer>("title", async ({ width, height, params }) => {
   const {
     text,
+    fontSize = 0.05,
     textColor = "#ffffff",
     fontFamily = defaultFontFamily,
     position = "center",
     zoomDirection = "in",
     zoomAmount = 0.2,
   } = params;
-  const fontSize = Math.round(Math.min(width, height) * 0.1);
+  const fontSizeAbs = Math.round(width * fontSize);
 
   const textBox = new Textbox(text, {
     fill: textColor,
     fontFamily,
-    fontSize,
+    fontSize: fontSizeAbs,
     textAlign: "center",
     width: width * 0.8,
   });
